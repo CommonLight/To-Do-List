@@ -29,8 +29,17 @@ const List = () => {
         } else {
           completedTasks.push(currentIndex);
         }  
-        setCompletedTasksIndexes(completedTasks);
-      };
+        setCompletedTasksIndexes(completedTasks)
+      }
+
+    //   const inputElement = document.getElementById('task-input')
+    //   inputElement.addEventListener('keydown', enterTask)
+      
+    //   const enterTask = (event) => {
+    //     if (event.keyCode === 13) {
+    //         addTask()
+    //     }
+    //   }
       
     // const taskToggle = (currentIndex) => {
     //     const isTaskCompleted = isCompleted(currentIndex)
@@ -60,7 +69,12 @@ const List = () => {
             <h2>TASK LIST</h2>
             {taskList.map((task, index) => {
                 return (<div>
-                <p style={{textDecoration: isCompleted(index) ? "line-through" : null, display:"inline", fontSize: "18pt", color: 'black', marginRight: "20px"}}>{task}</p>
+                <p className='listText' style={{
+                    textDecoration: isCompleted(index) ? "line-through" : null, display:"inline", 
+                    fontSize: "18pt",
+                    color: 'black',
+                    marginRight: "20px"
+                }}>{task}</p>
                 <input className= "checkBox" type="checkbox" onChange={() => taskToggle(index)} />
                 <button className="deleteButton" onClick={() => deleteTask(index)}>DELETE</button>
             </div>)
